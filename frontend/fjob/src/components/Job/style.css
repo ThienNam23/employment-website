@@ -1,0 +1,52 @@
+._job-card {
+    width: 360px;
+    /* flex-direction: row; */
+    padding: 5px;
+}
+
+._job-card-img {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+._job-card-title {
+    font-size: 14px;
+}
+
+._job-card-body {
+    padding: 5px;
+    justify-content: space-between;
+    position: relative;
+}
+
+._job-card-time {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+._jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-gap: 15px;
+}
+
+._job-card-skills {
+    max-width: 230px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+._job-card-skills::-webkit-scrollbar {
+    margin-top: 5px;
+    height: 2px;
+}
+
+._job-card-skills::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.5);
+    border-radius: 1px;
+}

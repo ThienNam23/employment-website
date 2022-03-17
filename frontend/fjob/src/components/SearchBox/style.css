@@ -1,0 +1,23 @@
+._searchbox-form-body {
+    width: 85%;
+}
+
+._searchbox {
+    padding: 65px 0 20px 0;
+    background: linear-gradient(153deg, rgba(0, 201, 3, 0.5) 4%, rgba(255,255,255,1) 100%);
+    max-width: 100vw;
+}
+
+._searchbox-advance {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    padding: 0 !important;
+}
+
+._searchbox-advance-item {
+    width: 200px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}

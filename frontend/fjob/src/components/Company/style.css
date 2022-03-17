@@ -1,0 +1,39 @@
+._companies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-gap: 15px;
+}
+
+._company-card {
+    max-width: 360px;
+}
+
+._company-card-img {
+    position: relative;
+}
+
+._company-card-logo {
+    position: absolute !important;
+    width: 80px !important;
+    height: 80px !important;
+    top: 85%;
+    left: 5%;
+    object-fit: contain;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+._company-card-name {
+    margin-left: 30%;
+    height: 48px;
+}
+
+._company-card-body {
+    padding: 5px 15px;
+}
+
+._company-card-slogan {
+    display: flex;
+    font-size: 14px;
+    color: #828282;
+    font-style: italic;
+}
