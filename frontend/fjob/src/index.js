@@ -9,6 +9,7 @@ import Jobs from './pages/Jobs/Jobs';
 import Companies from './pages/Companies/Companies';
 import Job from './components/Job/Job';
 import Skills from './components/Skill/Skills';
+import Positions from './components/Position/Positions';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
                     <Route index element={<Home />} />
                     <Route path='jobs' element={<Jobs />}>
                         <Route path='skills' element={<Skills/>}/>
+                        <Route path='positions' element={<Positions/>}/>
                         <Route path=':jobId' element={<Job />} />
                     </Route>
                     <Route path='companies' element={<Companies />} />
