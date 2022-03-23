@@ -1,13 +1,44 @@
 ._header-link {
-    color: rgb(0, 0, 0) !important;
-    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    position: relative;
 }
 
 ._header-link:hover {
-    color: rgb(64, 255, 64) !important;
+    background-color: rgba(128, 128, 128, 0.692);
+    border-radius: 10px;
 }
 
 ._header {
-    box-shadow: 0 10px 100px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 100px 20px rgba(0, 0, 0, 0.3);
     max-width: 99vw;
+}
+
+._header-brand {
+    color: black !important;
+    font-weight: bold;
+}
+
+._header-link-title {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+._header-dropdown-menu {
+    display: none;
+    position: absolute;
+}
+
+._header-dropdown-menu-show {
+    display: block;
+    top: 40px;
+    animation: float-up 0.2s ease-in-out;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
