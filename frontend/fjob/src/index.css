@@ -15,3 +15,9 @@ body {
 .debug-on {
     border: 1px solid red;
 }
+
+.text {
+    font-size: 16px;
+    color: rgb(111,109,113);
+    text-decoration: none;
+}
