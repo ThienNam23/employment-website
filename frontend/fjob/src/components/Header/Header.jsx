@@ -62,19 +62,21 @@ const Header = () => {
             </Navbar.Brand>
             <Container>
                 <Nav className="me-auto">
-                    <Nav.Link className="_header-link"
-                        as={Link}
-                        to="/jobs"
+                    <div
                         onMouseOver={() => setShowJobDrdwMenu(true)}
                         onMouseLeave={() => setShowJobDrdwMenu(false)}>
-                        <span className="_header-link-title fw-bold">Việc IT</span>
+                        <Nav.Link className="_header-link"
+                            as={Link}
+                            to="/jobs">
+                            <span className="_header-link-title fw-bold">Việc IT</span>
+                        </Nav.Link>
                         <Paper className={"_header-dropdown-menu" + (showJobDrdwMenu ? ' _header-dropdown-menu-show' : '')}>
                             <MenuList>
                                 {jobMenuItems.map(item => {
                                     const { id, title, icon, link } = item;
                                     return (
-                                        <Link to={link} className="_header-link-title">
-                                            <MenuItem className="py-1" key={id}>
+                                        <Link to={link} className="_header-link-title" key={id}>
+                                            <MenuItem className="py-1">
                                                 <ListItemIcon style={{ verticalAlign: "middle" }}>
                                                     {icon}
                                                 </ListItemIcon>
@@ -85,23 +87,25 @@ const Header = () => {
                                 })}
                             </MenuList>
                         </Paper>
-                    </Nav.Link>
+                    </div>
                     <Nav.Link className="_header-link" as={Link} to="/companies">
                         <span className="_header-link-title fw-bold">Công ty</span>
                     </Nav.Link>
-                    <Nav.Link className="_header-link"
-                        as={Link}
-                        to="/your-cv"
+                    <div
                         onMouseOver={() => setShowCvDrdwMenu(true)}
                         onMouseLeave={() => setShowCvDrdwMenu(false)}>
-                        <span className="_header-link-title fw-bold">{`Hồ sơ & CV`}</span>
+                        <Nav.Link className="_header-link"
+                            as={Link}
+                            to="/your-cv">
+                            <span className="_header-link-title fw-bold">{`Hồ sơ & CV`}</span>
+                        </Nav.Link>
                         <Paper className={"_header-dropdown-menu" + (showCvDrdwMenu ? ' _header-dropdown-menu-show' : '')}>
                             <MenuList>
                                 {cvMenuItems.map(item => {
                                     const { id, title, icon, link } = item;
                                     return (
-                                        <Link to={link} className="_header-link-title">
-                                            <MenuItem className="py-1" key={id}>
+                                        <Link to={link} className="_header-link-title" key={id}>
+                                            <MenuItem className="py-1">
                                                 <ListItemIcon style={{ verticalAlign: "middle" }}>
                                                     {icon}
                                                 </ListItemIcon>
@@ -112,7 +116,7 @@ const Header = () => {
                                 })}
                             </MenuList>
                         </Paper>
-                    </Nav.Link>
+                    </div>
                 </Nav>
                 <Button size="sm" className="me-2" variant="outline-primary">Đăng nhập</Button>
                 <Button size="sm" className="me-2" variant="success">Đăng ký</Button>

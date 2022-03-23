@@ -4,7 +4,7 @@ import Companies from "../../components/Company/Companies";
 
 const Home = () => {
     return (
-        <>
+        <div style={{ marginTop: "-55px"}}>
             <SearchBox />
             <div>
                 <h3 className="m-3">Việc làm mới nhất</h3>
@@ -12,7 +12,7 @@ const Home = () => {
                 <h3 className="m-3">Nhà tuyển dụng nổi bật</h3>
                 <Companies />
             </div>
-        </>
+        </div>
     );
 }
 

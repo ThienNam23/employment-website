@@ -6,7 +6,9 @@ const App = () => {
   return (
     <main>
       <Header />
-      <Outlet />
+      <div style={{ marginTop: "55px" }}>
+        <Outlet />
+      </div>
       <Footer />
     </main>
   );

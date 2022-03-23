@@ -30,7 +30,7 @@
 
 ._header-dropdown-menu-show {
     display: block;
-    top: 40px;
+    top: 48px;
     animation: float-up 0.2s ease-in-out;
 }
 
