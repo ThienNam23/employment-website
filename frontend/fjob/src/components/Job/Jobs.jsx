@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import { JOBS } from "./data";
 import { LocationOnOutlined, PaidOutlined, FavoriteBorderOutlined } from "@mui/icons-material";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const Jobs = () => {
 
@@ -15,7 +16,7 @@ const Jobs = () => {
                         <div className="d-flex">
                             <Card.Img className="_job-card-img" variant="top" src={companyLogo} />
                             <div className="my-auto">
-                                <Card.Title className="_job-card-title">{name}</Card.Title>
+                                <Card.Title as={Link} to={`/jobs/${id}`} className="_job-card-title">{name}</Card.Title>
                                 <Card.Text>{companyName}</Card.Text>
                             </div>
                             <FavoriteBorderOutlined fontSize="small" className="mt-2 me-2" onClick={() => console.log()} />
