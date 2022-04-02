@@ -1,47 +1,10 @@
-import { Bolt, BusinessCenter, Edit, FeaturedPlayList, LocationOn } from "@mui/icons-material";
 import { ListItemIcon, MenuItem, MenuList, Paper } from "@mui/material";
 import { useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.svg";
+import { CV_MENU_ITEMS, JOB_MENU_ITEMS } from "./dropdown-menu-list";
 import "./style.css";
-
-const cvMenuItems = [
-    {
-        id: 1,
-        title: "Tạo CV",
-        icon: <Edit fontSize="small" />,
-        link: "/your-cv/edit"
-    },
-    {
-        id: 2,
-        title: "Quản lý CV",
-        icon: <FeaturedPlayList fontSize="small" />,
-        link: "/your-cv"
-    }
-];
-
-const jobMenuItems = [
-    {
-        id: 1,
-        title: "Việc làm theo kỹ năng",
-        icon: <Bolt fontSize="small" />,
-        link: "/jobs/skills"
-    },
-    {
-        id: 2,
-        title: "Việc làm theo chức vụ",
-        icon: <BusinessCenter fontSize="small" />,
-        link: "/jobs/positions"
-    },
-    {
-        id: 3,
-        title: "Việc làm theo địa điểm",
-        icon: <LocationOn fontSize="small" />,
-        link: "/jobs/locations"
-    }
-]
-
 
 const Header = () => {
 
@@ -72,7 +35,7 @@ const Header = () => {
                         </Nav.Link>
                         <Paper className={"_header-dropdown-menu" + (showJobDrdwMenu ? ' _header-dropdown-menu-show' : '')}>
                             <MenuList>
-                                {jobMenuItems.map(item => {
+                                {JOB_MENU_ITEMS.map(item => {
                                     const { id, title, icon, link } = item;
                                     return (
                                         <Link to={link} className="_header-link-title" key={id}>
@@ -101,7 +64,7 @@ const Header = () => {
                         </Nav.Link>
                         <Paper className={"_header-dropdown-menu" + (showCvDrdwMenu ? ' _header-dropdown-menu-show' : '')}>
                             <MenuList>
-                                {cvMenuItems.map(item => {
+                                {CV_MENU_ITEMS.map(item => {
                                     const { id, title, icon, link } = item;
                                     return (
                                         <Link to={link} className="_header-link-title" key={id}>

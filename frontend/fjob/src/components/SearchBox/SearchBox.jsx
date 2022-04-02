@@ -1,117 +1,102 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useState } from "react";
-import { Carousel } from "react-bootstrap";
-import { SLIDES } from "./slide-data";
+import { EXPERIENCES, JOB_TYPES, LOCATIONS, POSITIONS } from "./checkbox-options-mock";
 import "./style.css";
 
-const SearchBox = () => {
-    const [age, setAge] = useState('');
+const SearchBox = ({ collapse = true }) => {
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
-    };
+    const [filterValues, setFilterValues] = useState({
+        location: '',
+        jobType: '',
+        position: '',
+        experience: ''
+    });
 
-    const [city, setCity] = useState('');
-
-    const hangleCity = (event) => {
-        setCity(event.target.value);
+    const handleChangeFilterValue = (event) => {
+        setFilterValues({ ...filterValues, [event.target.name]: event.target.value });
     };
 
     return (
-        <div className="row _searchbox">
-            <div className="col" style={{ padding: "20px 10px 0 100px" }}>
-                <h2>Tìm kiếm công việc yêu thích của bạn</h2>
-                <form className="form-group d-flex justify-content-between ">
-                    <div className="_searchbox-form-body ">
-                        <input type="text" className="form-control" placeholder="Tìm kiếm theo kỹ năng, chức vụ, công ty, ..."/>
-                        <div>
-                            <h5 className="my-3">Tìm kiếm nâng cao</h5>
-                            <div className="_searchbox-advance " >
-                                <FormControl size="small"
-                                    color="success"
-                                    className="_searchbox-advance-item">
-                                    <InputLabel>Địa điểm</InputLabel>
-                                    <Select
-                                        value={city}
-                                        label="Địa điểm"
-                                        onChange={hangleCity}
-                                    >
-                                        <MenuItem value="">--</MenuItem>
-                                        <MenuItem value={10}>Hà Nội</MenuItem>
-                                        <MenuItem value={20}>Đà Nẵng</MenuItem>
-                                        <MenuItem value={30}>Tp. Hồ Chí Minh</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <FormControl size="small"
-                                    color="success"
-                                    className="_searchbox-advance-item">
-                                    <InputLabel>Hình thức làm việc</InputLabel>
-                                    <Select
-                                        value={age}
-                                        label="Hình thức làm việc"
-                                        onChange={handleChange}
-                                    >
-                                        <MenuItem value="">--</MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <FormControl size="small"
-                                    color="success"
-                                    className="_searchbox-advance-item">
-                                    <InputLabel>Chức vụ</InputLabel>
-                                    <Select
-                                        value={age}
-                                        label="Chức vụ"
-                                        onChange={handleChange}
-                                    >
-                                        <MenuItem value="">--</MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <FormControl size="small"
-                                    color="success"
-                                    className="_searchbox-advance-item">
-                                    <InputLabel>Yêu cầu kinh nghiệm</InputLabel>
-                                    <Select
-                                        value={age}
-                                        label="Yêu cầu kinh nghiệm"
-                                        onChange={handleChange}
-                                    >
-                                        <MenuItem value="">--</MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </div>
-
-                        </div>
+        <div className="d-flex justify-content-between " style={{ maxWidth : "64vw" }}>
+            <div className="_searchbox-form-body ">
+                <input type="text" className="form-control" placeholder="Tìm kiếm việc làm theo kỹ năng, chức vụ, công ty, ..." />
+                <div>
+                    <h5 className="my-3">Tìm kiếm nâng cao</h5>
+                    <div className={`_searchbox-advanced ${collapse ? '_searchbox-advanced-collapse' : ''}`} >
+                        <FormControl size="small"
+                            color="success"
+                            className="_searchbox-advanced-item">
+                            <InputLabel>Địa điểm</InputLabel>
+                            <Select
+                                name="location"
+                                value={filterValues.location}
+                                label="Địa điểm"
+                                onChange={handleChangeFilterValue}>
+                                {LOCATIONS.map(item => {
+                                    const { id, value, title } = item;
+                                    return (
+                                        <MenuItem value={value} key={id}>{title}</MenuItem>
+                                    );
+                                })}
+                            </Select>
+                        </FormControl>
+                        <FormControl size="small"
+                            color="success"
+                            className="_searchbox-advanced-item">
+                            <InputLabel>Hình thức làm việc</InputLabel>
+                            <Select
+                                name="jobType"
+                                value={filterValues.jobType}
+                                label="Hình thức làm việc"
+                                onChange={handleChangeFilterValue}>
+                                {JOB_TYPES.map(item => {
+                                    const { id, value, title } = item;
+                                    return (
+                                        <MenuItem value={value} key={id}>{title}</MenuItem>
+                                    );
+                                })}
+                            </Select>
+                        </FormControl>
+                        <FormControl size="small"
+                            color="success"
+                            className="_searchbox-advanced-item">
+                            <InputLabel>Cấp bậc</InputLabel>
+                            <Select
+                                name="position"
+                                value={filterValues.position}
+                                label="Cấp bậc"
+                                onChange={handleChangeFilterValue}>
+                                {POSITIONS.map(item => {
+                                    const { id, value, title } = item;
+                                    return (
+                                        <MenuItem value={value} key={id}>{title}</MenuItem>
+                                    );
+                                })}
+                            </Select>
+                        </FormControl>
+                        <FormControl size="small"
+                            color="success"
+                            className="_searchbox-advanced-item">
+                            <InputLabel>Yêu cầu kinh nghiệm</InputLabel>
+                            <Select
+                                name="experience"
+                                value={filterValues.experience}
+                                label="Yêu cầu kinh nghiệm"
+                                onChange={handleChangeFilterValue}>
+                                {EXPERIENCES.map(item => {
+                                    const { id, value, title } = item;
+                                    return (
+                                        <MenuItem value={value} key={id}>{title}</MenuItem>
+                                    );
+                                })}
+                            </Select>
+                        </FormControl>
                     </div>
-                    <div>
-                        <button className="btn btn-success" type="submit">Tìm kiếm</button>
-                    </div>
-                </form>
-
+                </div>
             </div>
-            <Carousel style={{ height: "350px" }} className="col-5" interval={3000}
-                controls={false} indicators={false}>
-                {SLIDES.map((slide) => {
-                    const { id, img } = slide;
-                    return (
-                        <Carousel.Item key={id}>
-                            <img
-                                className="d-block w-100"
-                                src={img}
-                                alt="First slide"
-                            />
-                        </Carousel.Item>
-                    )
-                })}
-            </Carousel>
+            <div>
+                <button className="btn btn-success" type="submit">Tìm kiếm</button>
+            </div>
         </div>
     );
 }

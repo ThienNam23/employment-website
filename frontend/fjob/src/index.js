@@ -22,7 +22,7 @@ ReactDOM.render(
                     <Route index element={<Home />} />
                     <Route path='jobs' element={<Jobs />}>
                         <Route path='skills' element={<Skills/>}/>
-                        <Route path='positions' element={<Positions/>}/>
+                        <Route path='job-titles' element={<Positions/>}/>
                         <Route path=':jobId' element={<Job />} />
                     </Route>
                     <Route path='companies' element={<Companies />} />
