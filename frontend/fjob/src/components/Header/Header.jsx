@@ -118,8 +118,8 @@ const Header = () => {
                         </Paper>
                     </div>
                 </Nav>
-                <Button size="sm" className="me-2" variant="outline-primary">Đăng nhập</Button>
-                <Button size="sm" className="me-2" variant="success">Đăng ký</Button>
+                <Button size="sm" className="me-2" variant="outline-primary" as={Link} to="/login">Đăng nhập</Button>
+                <Button size="sm" className="me-2" variant="success" as={Link} to="/register">Đăng ký</Button>
                 <Button size="sm" variant="secondary" title="Dành cho nhà tuyển dụng">Đăng tuyển</Button>
             </Container>
         </Navbar>
