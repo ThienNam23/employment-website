@@ -13,6 +13,9 @@ const Jobs = () => {
                 <SearchBox />
             </div>
             <Outlet />
+            <div className="container debug-on mt-4">
+                
+            </div>
         </div>
     );
 }

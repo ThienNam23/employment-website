@@ -21,3 +21,21 @@ body {
     color: rgb(111,109,113);
     text-decoration: none;
 }
+
+._app-fs-14 {
+    font-size: 14px !important;
+}
+._app-fs-15 {
+    font-size: 15px !important;
+}
+._app-fs-16 {
+    font-size: 16px !important;
+}
+
+._app-bdr-10 {
+    border-radius: 10px !important;
+}
+
+._app-bg-light-green {
+    background-color: #c8e6c9 !important;
+}

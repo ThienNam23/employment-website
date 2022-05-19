@@ -53,3 +53,24 @@
     background: rgba(128, 128, 128, 0.5);
     border-radius: 1px;
 }
+
+._job-general-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 320px);
+    grid-gap: 15px;
+    padding: 5px;
+}
+
+._job-general-info {
+    width: 320px;
+}
+
+._job-header {
+    display: flex;
+    padding: 5px;
+}
+
+._job-header-title {
+    font-size: 16px;
+    font-weight: bold;
+}
